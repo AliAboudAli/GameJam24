@@ -593,9 +593,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: df7ef05fa87d48248ba181823b336391, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: df7ef05fa87d48248ba181823b336391, type: 3}
+    - target: {fileID: 9500000, guid: df7ef05fa87d48248ba181823b336391, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 8f2f5123e7b753b44ad9b59d61095cb5, type: 2}
+    - target: {fileID: 9500000, guid: df7ef05fa87d48248ba181823b336391, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: df7ef05fa87d48248ba181823b336391, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -628,8 +640,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  animator: {fileID: 0}
-  forward: {fileID: 7400000, guid: b1afb1a8906792749986c8e7514a1796, type: 3}
+  animator: {fileID: 1972608144}
+--- !u!95 &1972608144 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: df7ef05fa87d48248ba181823b336391,
+    type: 3}
+  m_PrefabInstance: {fileID: 1972608141}
+  m_PrefabAsset: {fileID: 0}
 --- !u!143 &1972608146
 CharacterController:
   m_ObjectHideFlags: 0

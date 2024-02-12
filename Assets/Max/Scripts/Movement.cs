@@ -28,11 +28,12 @@ public class Movement : MonoBehaviour
 
         // Move the character
         controller.Move(moveDirection * moveSpeed * Time.deltaTime);
+
+        if (verticalInput > 1)
+        {
+            animator.Play("WalkForward");
+        }
     }
 
-    void UpdateAnimation(float verticalInput)
-    {
-        // Set animation parameter based on movement input
-        animator.SetBool("isWalkingForward", verticalInput > 0);
-    }
+
 }
