@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public int Health;
-    public int MaxHealth;
+    
+    public int maxHealth = 100; // Maximum health
+    public int currentHealth; // Current health
 
-
-    public void Death()
+    void Start()
     {
-        if (Health <= 0)
+        currentHealth = maxHealth;
+    }
+
+    public void Update()
+    {
+
+        if (currentHealth <= 0)
         {
-            Debug.Log("nigga you dead");
+            Die();
         }
+    }
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }
