@@ -4,36 +4,46 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Movement speed
+    public float moveSpeed = 5f; 
 
-    CharacterController controller; // Reference to CharacterController component
+    CharacterController controller; 
 
     public Animator animator;
 
     void Start()
     {
-        controller = GetComponent<CharacterController>(); // Get reference to CharacterController component
+        controller = GetComponent<CharacterController>(); 
     }
 
     void Update()
     {
-        // Get input axis from Xbox controller
         float verticalInput = Input.GetAxis("Vertical");
 
-        // Print input value to the console for debugging
         Debug.Log("Vertical Input: " + verticalInput);
 
-        // Calculate movement vector
         Vector3 moveDirection = new Vector3(0f, 0f, verticalInput).normalized;
 
-        // Move the character
         controller.Move(moveDirection * moveSpeed * Time.deltaTime);
 
-        if (verticalInput > 1)
+        if (verticalInput > 0)
         {
             animator.Play("WalkForward");
         }
+
+        if (verticalInput < 0)
+        {
+            animator.Play("WalkBackward");
+        }
+
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            animator.Play("Punch");
+        }
+        if (!this.animator.GetCurrentAnimatorStateInfo(0).IsName("Punch") && verticalInput == 0)
+        {
+            animator.Play("Idle");
+        }
+
     }
-
-
 }
