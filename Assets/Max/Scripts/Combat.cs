@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Combat : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int damageAmount = 10; 
+
+    private Animator animator; 
+
+    public Character opps;
     void Start()
     {
-        
+
+        animator = GetComponentInParent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("P2"))
+        {
+            opps.currentHealth -= damageAmount;
+            Debug.Log("clapped");
+        }
+
     }
 }
