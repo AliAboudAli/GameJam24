@@ -4,11 +4,8 @@ using TMPro;
 public class Switch : MonoBehaviour
 {
     public GameObject[] Courasel;
-    public GameObject[] charactersPrefabs;
     private int index;
     public TextMeshProUGUI[] Names;
-    public GameObject SpawnedObject;
-    
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +13,13 @@ public class Switch : MonoBehaviour
         index = 0;
         ShowCurrent();
     }
-    
+
+    // Update is called once per frame
+    void Update()
+    {
+        // Optionally, handle any update-related behavior here.
+    }
+
     public void Next()
     {
         index++;
@@ -64,35 +67,15 @@ public class Switch : MonoBehaviour
         switch (index)
         {
             case 0:
-                return "NanN1";
+                return "Name1";
             case 1:
-                return "NanN2";
+                return "Name2";
             case 2:
-                return "NanN3";
+                return "Name3";
             case 3:
-                return "NanN4";
+                return "Name4";
             default:
                 return "";
-        }
-    }
-
-    public void SpawnSelectedCharacter()
-    {
-        //check if the index is valid 
-        if (index >= 0 && index < charactersPrefabs.Length)
-        {
-            //Destroy the previously spawned character prefab
-            if (SpawnedObject != null)
-            {
-                Destroy(SpawnedObject);
-            }
-            
-            //Instantiate the selected character prefab
-            SpawnedObject = Instantiate(charactersPrefabs[index], transform.position, Quaternion.identity);
-        }
-        else
-        {
-            Debug.Log("Invalid index");
         }
     }
 }
