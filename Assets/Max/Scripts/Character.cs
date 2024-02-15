@@ -25,16 +25,11 @@ public class Character : MonoBehaviour
     }
     void Die()
     {
-        animator.Play("Death");
-        Debug.Log("bro died");
+
         if (animator.GetCurrentAnimatorStateInfo(0).length < animator.GetCurrentAnimatorStateInfo(0).normalizedTime)
         {
-            DestructionUnchained();
+            animator.Play("Death");
+            Debug.Log("bro died");
         }
-    }
-
-    void DestructionUnchained()
-    {
-        Destroy(gameObject);
     }
 }
