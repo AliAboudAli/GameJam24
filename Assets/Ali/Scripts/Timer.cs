@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Timer: MonoBehaviour
 {
     public TextMeshProUGUI countdownText;
-    private int timer = 99;
+    private int timer = 9;
     private bool isGameOver = false;
     public string gameOverSceneName;
 
@@ -37,7 +37,6 @@ public class Timer: MonoBehaviour
 
     void GameOver()
     {
-        
         Debug.Log("Game Over");
         SceneManager.LoadScene("End");
     }

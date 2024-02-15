@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Ali/Scenes/CharacterSelections.unity
     guid: 1345e375db378724c83e6922c535d603
   - enabled: 1
-    path: Assets/Max/Scenes/MaxMain.unity
-    guid: 03a1da06860d9a84eb7c319c0acef667
+    path: Assets/Ali/Scenes/Ingame(preview).unity
+    guid: ce9f7837cd3e97f468ab94670c68c5e0
   - enabled: 1
     path: Assets/Abdu/End.unity
     guid: e01d957222a52554fafdc730ac2f87c8
