@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/main menu.unity
+    guid: 090d5059b51ad1c459d0d65726bee74a
+  - enabled: 1
+    path: Assets/Ali/Scenes/IntroStory.unity
+    guid: b9e46dc953d9f294c89e3090b48ddbe5
   - enabled: 1
     path: Assets/Ali/Scenes/CharacterSelections.unity
     guid: 1345e375db378724c83e6922c535d603
   - enabled: 1
-    path: Assets/Ali/Scenes/Ingame(preview).unity
-    guid: ce9f7837cd3e97f468ab94670c68c5e0
+    path: Assets/Max/Scenes/MaxMain.unity
+    guid: 03a1da06860d9a84eb7c319c0acef667
+  - enabled: 1
+    path: Assets/Abdu/End.unity
+    guid: e01d957222a52554fafdc730ac2f87c8
   m_configObjects: {}
