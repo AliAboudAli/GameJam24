@@ -45,6 +45,11 @@ public class menu : MonoBehaviour
         dropdown.AddOptions(options);
     }
 
+    public void backtomenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+    }
+
     public void setresolution(int resolutionindex)
     {
         Resolution resolution = resolutions[resolutionindex];
