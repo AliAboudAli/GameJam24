@@ -2,12 +2,14 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer: MonoBehaviour
 {
     public TextMeshProUGUI countdownText;
     private int timer = 99;
     private bool isGameOver = false;
+    public string gameOverSceneName;
 
     void Start()
     {
@@ -37,6 +39,6 @@ public class Timer: MonoBehaviour
     {
         
         Debug.Log("Game Over");
-        
+        SceneManager.LoadScene("End");
     }
 }
