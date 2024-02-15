@@ -1004,6 +1004,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1126534576}
+        m_TargetAssemblyTypeName: CharacterSelectons, Assembly-CSharp
+        m_MethodName: BackCharacter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &241934443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,7 +1066,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 307bb8babceb4054e99a40d202f437dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Kourasel: []
+  Kourasel:
+  - {fileID: 557969491}
+  - {fileID: 1867654329}
+  - {fileID: 402457952}
+  - {fileID: 1871182468}
   Names:
   - {fileID: 1019669095}
   - {fileID: 1878877559}
@@ -2197,6 +2213,7 @@ MonoBehaviour:
   - {fileID: 1048718461}
   SelectedCharacterIndex: 0
   newIndex: 0
+  newIndex2: 0
   load: {fileID: 0}
 --- !u!1 &1226912854
 GameObject:
@@ -2708,7 +2725,7 @@ GameObject:
   - component: {fileID: 1578082252}
   - component: {fileID: 1578082251}
   - component: {fileID: 1578082250}
-  - component: {fileID: 1578082249}
+  - component: {fileID: 1578082253}
   m_Layer: 5
   m_Name: SelectCharacter (next)
   m_TagString: Untagged
@@ -2736,24 +2753,6 @@ RectTransform:
   m_AnchoredPosition: {x: 38.5, y: -19.825207}
   m_SizeDelta: {x: 33.818, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1578082249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578082247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 307bb8babceb4054e99a40d202f437dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Kourasel: []
-  Names:
-  - {fileID: 746205287}
-  - {fileID: 237594564}
-  - {fileID: 1878877559}
-  - {fileID: 1019669095}
 --- !u!114 &1578082250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2798,8 +2797,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1578082249}
-        m_TargetAssemblyTypeName: Switch, Assembly-CSharp
+      - m_Target: {fileID: 1126534576}
+        m_TargetAssemblyTypeName: CharacterSelectons, Assembly-CSharp
+        m_MethodName: NextCharacter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 241934445}
+        m_TargetAssemblyTypeName: Courasel, Assembly-CSharp
         m_MethodName: Next
         m_Mode: 1
         m_Arguments:
@@ -2848,6 +2859,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578082247}
   m_CullTransparentMesh: 1
+--- !u!114 &1578082253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578082247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307bb8babceb4054e99a40d202f437dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Kourasel:
+  - {fileID: 557969491}
+  - {fileID: 1867654329}
+  - {fileID: 402457952}
+  - {fileID: 1871182468}
+  Names:
+  - {fileID: 1019669095}
+  - {fileID: 1878877559}
+  - {fileID: 237594564}
+  - {fileID: 746205287}
 --- !u!4 &1622551242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9069729332312373446, guid: 51053b5bbb7f9104f92a0ac11d7f12a4,
@@ -3150,6 +3183,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1126534576}
         m_TargetAssemblyTypeName: CharacterSelectons, Assembly-CSharp
         m_MethodName: BackCharacter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1777739681}
+        m_TargetAssemblyTypeName: Courasel, Assembly-CSharp
+        m_MethodName: Previous
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
