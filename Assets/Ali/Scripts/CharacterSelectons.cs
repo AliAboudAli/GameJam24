@@ -6,29 +6,44 @@ using UnityEngine.SceneManagement;
 public class CharacterSelectons : MonoBehaviour
 {
     public GameObject[] characters;
-    public int SelecedCharacters = 0;
+    public int SelectedCharacterIndex;
+    public int newIndex;
+    public LoadCharacter load;
+    GameManager gameManager;
+
+    void Awake()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+       // SelectedCharacterIndex = 0;
+    }
 
     public void NextCharacter()
     {
-        characters[SelecedCharacters].SetActive(false);
-        SelecedCharacters = (SelecedCharacters + 1) % characters.Length;
-        characters[SelecedCharacters].SetActive(true);
+        characters[newIndex].SetActive(false);
+        newIndex = newIndex + 1;
+        characters[newIndex].SetActive(true);
+        print(newIndex);
     }
 
     public void BackCharacter()
     {
-        characters[SelecedCharacters].SetActive(false);
-        SelecedCharacters--;
-        if (SelecedCharacters < 0)
-        {
-            SelecedCharacters += characters.Length;
-        }
-        characters[SelecedCharacters].SetActive(true);
+        characters[newIndex].SetActive(false);
+        newIndex = newIndex - 1;
+        characters[SelectedCharacterIndex].SetActive(true);
+        //print(newIndex);
+    }
+
+    void Update()
+    {
+        print(newIndex);
+//        print(gameObject.name);
     }
 
     public void StartGame()
     {
-        PlayerPrefs.SetInt("SelecedCharacters", SelecedCharacters);
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        gameManager.SelectedCharacter = newIndex;
+       // PlayerPrefs.SetInt("selectedCharacter", SelectedCharacterIndex);
+        print(newIndex);
+        gameManager.LoadNextScene();
     }
 }

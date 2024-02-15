@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class LoadCharacter : MonoBehaviour
 {
-    public GameObject[] Characterprefabs;
+    public GameObject[] CharacterPrefabs;
     public Transform spawnPoint;
     public TMP_Text Label;
-    // Start is called before the first frame update
+    GameManager gameManager;
+
     void Start()
     {
-        int SelectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
-        GameObject prefab = Characterprefabs[SelectedCharacter];
-        GameObject clone = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
-        Label.text = prefab.name;
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+       // int selectedCharacterIndex = PlayerPrefs.GetInt("selectedCharacter");
+       int selectedCharacterIndex = gameManager.SelectedCharacter;
+       print(selectedCharacterIndex);
+        GameObject prefab = CharacterPrefabs[selectedCharacterIndex];
+        GameObject clone = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
     }
-    
 }

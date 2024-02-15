@@ -1,9 +1,9 @@
 using UnityEngine;
 using TMPro;
 
-public class Switch : MonoBehaviour
+public class Courasel : MonoBehaviour
 {
-    public GameObject[] Courasel;
+    public GameObject[] Kourasel;
     private int index;
     public TextMeshProUGUI[] Names;
 
@@ -23,7 +23,7 @@ public class Switch : MonoBehaviour
     public void Next()
     {
         index++;
-        if (index >= Courasel.Length)
+        if (index >= Kourasel.Length)
             index = 0;
 
         ShowCurrent();
@@ -33,7 +33,7 @@ public class Switch : MonoBehaviour
     {
         index--;
         if (index < 0)
-            index = Courasel.Length - 1;
+            index = Kourasel.Length - 1;
 
         ShowCurrent();
     }
@@ -41,9 +41,9 @@ public class Switch : MonoBehaviour
     private void ShowCurrent()
     {
         // Activate only the GameObject at the current index
-        for (int i = 0; i < Courasel.Length; i++)
+        for (int i = 0; i < Kourasel.Length; i++)
         {
-            Courasel[i].SetActive(i == index);
+            Kourasel[i].SetActive(i == index);
         }
 
         // Update the names in the TextMeshProUGUI components
