@@ -6,7 +6,7 @@ using TMPro;
 public class Timer: MonoBehaviour
 {
     public TextMeshProUGUI countdownText;
-    private int timer = 9;
+    private int timer = 99;
     private bool isGameOver = false;
 
     void Start()
@@ -35,8 +35,7 @@ public class Timer: MonoBehaviour
 
     void GameOver()
     {
-        //moet een ref komen van de fucntie die moet hier
-        //debug laten om de gameover functie te testen
+        
         Debug.Log("Game Over");
         
     }

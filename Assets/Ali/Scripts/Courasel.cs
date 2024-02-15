@@ -61,21 +61,41 @@ public class Courasel : MonoBehaviour
         }
     }
 
-    private string GetElementName(int index)
+    private string GetElementName(int index, bool isFirstCase = true)
     {
-        // Provide the names for each element here based on the index
-        switch (index)
+        if (isFirstCase)
         {
-            case 0:
-                return "Name1";
-            case 1:
-                return "Name2";
-            case 2:
-                return "Name3";
-            case 3:
-                return "Name4";
-            default:
-                return "";
+            // Handle the first type of cases
+            switch (index)
+            {
+                case 0:
+                    return "Jantje";
+                case 1:
+                    return "Pietje";
+                case 2:
+                    return "Predator";
+                case 3:
+                    return "Takeshi";
+                default:
+                    return "";
+            }
+        }
+        else
+        {
+            // Handle the second type of cases
+            switch (index)
+            {
+                case 0:
+                    return "Predator";
+                case 1:
+                    return "Jantje";
+                case 2:
+                    return "Takeshi";
+                case 3:
+                    return "Pietje";
+                default:
+                    return "";
+            }
         }
     }
 }
