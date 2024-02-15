@@ -20,6 +20,9 @@ public class Movement : MonoBehaviour
     public bool IsKicking = false;
     public bool IsPunching = false;
 
+    public Vector3 moveDirection;
+    public Vector3 P2moveDirection;
+
     void Start()
     {
 
@@ -28,13 +31,106 @@ public class Movement : MonoBehaviour
     void Update()
     {
         {
-
-
             float verticalInput = Input.GetAxis("Vertical");
 
-            Debug.Log("Vertical Input: " + verticalInput);
+            float P2verticalInput = Input.GetAxis("P2Vertical");
 
             Vector3 moveDirection = new Vector3(0f, 0f, verticalInput).normalized;
+
+            Vector3 P2moveDirection = new Vector3(0f, 0f, P2verticalInput).normalized;
+
+
+            if (gameObject.tag == ("P1"))
+            {
+                if (verticalInput == 0 && !IsAttacking)
+                {
+                    animator.Play("Idle");
+                }
+
+                if (verticalInput == 1 && !IsAttacking)
+                {
+                    animator.Play("WalkForward");
+                }
+
+                if (verticalInput == -1 && !IsAttacking)
+                {
+                    animator.Play("WalkBackward");
+                }
+
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    IsPunching = true;
+                    IsAttacking = true;
+                    animator.Play("Punch");
+                }
+
+                if (Input.GetButtonDown("Fire2"))
+                {
+                    IsKicking = true;
+                    IsAttacking = true;
+                    animator.Play("Mma Kick");
+                }
+
+                if (Input.GetButtonDown("Fire3"))
+                {
+                    IsKicking = true;
+                    IsAttacking = true;
+                    animator.Play("Flying Bicycle Kick");
+                }
+
+                if (Input.GetButtonDown("Fire4"))
+                {
+                    IsKicking = true;
+                    IsAttacking = true;
+                    animator.Play("Hurricane Kick");
+                }
+            }
+
+            if (gameObject.tag == ("P2"))
+            {
+                if (P2verticalInput == 0 && !IsAttacking)
+                {
+                    animator.Play("Idle");
+                }
+
+                if (P2verticalInput == 1 && !IsAttacking)
+                {
+                    animator.Play("WalkForward");
+                }
+
+                if (P2verticalInput == -1 && !IsAttacking)
+                {
+                    animator.Play("WalkBackward");
+                }
+
+                if (Input.GetButtonDown("P2Fire1"))
+                {
+                    IsPunching = true;
+                    IsAttacking = true;
+                    animator.Play("Punch");
+                }
+
+                if (Input.GetButtonDown("P2Fire2"))
+                {
+                    IsKicking = true;
+                    IsAttacking = true;
+                    animator.Play("Mma Kick");
+                }
+
+                if (Input.GetButtonDown("P2Fire3"))
+                {
+                    IsKicking = true;
+                    IsAttacking = true;
+                    animator.Play("Flying Bicycle Kick");
+                }
+
+                if (Input.GetButtonDown("P2Fire4"))
+                {
+                    IsKicking = true;
+                    IsAttacking = true;
+                    animator.Play("Hurricane Kick");
+                }
+            }
 
             controller = GetComponent<CharacterController>();
 
@@ -73,48 +169,9 @@ public class Movement : MonoBehaviour
                 controller.Move(moveDirection * moveSpeed * Time.deltaTime);
             }
 
-            if (verticalInput == 0 && !IsAttacking)
+            if (!IsAttacking)
             {
-                animator.Play("Idle");
-            }
-
-            if (verticalInput == 1 && !IsAttacking)
-            {
-                animator.Play("WalkForward");
-            }
-
-            if (verticalInput == -1 && !IsAttacking)
-            {
-                animator.Play("WalkBackward");
-            }
-
-            if (Input.GetButtonDown("Fire1"))
-            {
-                IsPunching = true;
-                IsAttacking = true;
-                animator.Play("Punch");
-            }
-
-            if (Input.GetButtonDown("Fire2"))
-            {
-                IsKicking = true;
-                IsAttacking = true;
-                animator.Play("Mma Kick");
-            }
-
-            if (Input.GetButtonDown("Fire3"))
-            {
-                IsKicking = true;
-                IsAttacking = true;
-                animator.Play("Flying Bicycle Kick");
-            }
-
-            if (Input.GetButtonDown("Fire4"))
-            {
-                IsKicking = true;
-                IsAttacking = true;
-                animator.Play("Hurricane Kick");
-
+                controller.Move(P2moveDirection * moveSpeed * Time.deltaTime);
             }
         }
     }
