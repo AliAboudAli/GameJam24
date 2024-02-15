@@ -1,26 +1,43 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
-public class Timer : MonoBehaviour
+public class Timer: MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI timer;
-    public float RemainingTime;
+    public TextMeshProUGUI countdownText;
+    private int timer = 9;
+    private bool isGameOver = false;
 
-    void Update()
+    void Start()
     {
-        if (RemainingTime > 0)
-        {
-            RemainingTime -= Time.deltaTime;
-        }
-        else if (RemainingTime < 0)
-        {
-            RemainingTime = 0;
-            timer.color = Color.red;
-            //gameover to back to main menu
+        StartCoroutine(StartCountdown());
+    }
 
-            int minutes = Mathf.FloorToInt(RemainingTime / 60);
-            int seconds = Mathf.FloorToInt(RemainingTime % 60);
-            timer.text = string.Format("{0:00}:{1:00}", minutes, seconds); // Corrected format
+    IEnumerator StartCountdown()
+    {
+        while (timer >= 0 && !isGameOver)
+        {
+            countdownText.text = timer.ToString();
+            yield return new WaitForSeconds(1);
+            timer--;
         }
+
+        if (!isGameOver)
+        {
+            countdownText.color = Color.red;
+            countdownText.text = "0";
+            Time.timeScale = 0;
+            GameOver();
+            //Debug.Log(":Freeze time " +  Time.timeScale);
+        }
+    }
+
+    void GameOver()
+    {
+        //moet een ref komen van de fucntie die moet hier
+        //debug laten om de gameover functie te testen
+        Debug.Log("Game Over");
+        
     }
 }

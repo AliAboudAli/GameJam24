@@ -264,6 +264,11 @@ MonoBehaviour:
   - {fileID: 3334920188372708462, guid: 60f27f80e7fd6ab44ad65dd9ba529c0e, type: 3}
   - {fileID: 8545006806082724476, guid: 51053b5bbb7f9104f92a0ac11d7f12a4, type: 3}
   - {fileID: 5798383647661600578, guid: af274c8f99d3dc74a9b0b8b60489d362, type: 3}
+  CharacterPrefabs2:
+  - {fileID: 5498509660808742793, guid: 97949191492a8a5498b3af89092454d0, type: 3}
+  - {fileID: 3334920188372708462, guid: 60f27f80e7fd6ab44ad65dd9ba529c0e, type: 3}
+  - {fileID: 8545006806082724476, guid: 51053b5bbb7f9104f92a0ac11d7f12a4, type: 3}
+  - {fileID: 5798383647661600578, guid: af274c8f99d3dc74a9b0b8b60489d362, type: 3}
   spawnPoint: {fileID: 779621995}
   spawnPoint2: {fileID: 890559863}
   Label: {fileID: 0}
@@ -429,6 +434,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterPrefabs:
+  - {fileID: 5498509660808742793, guid: 97949191492a8a5498b3af89092454d0, type: 3}
+  - {fileID: 3334920188372708462, guid: 60f27f80e7fd6ab44ad65dd9ba529c0e, type: 3}
+  - {fileID: 8545006806082724476, guid: 51053b5bbb7f9104f92a0ac11d7f12a4, type: 3}
+  - {fileID: 5798383647661600578, guid: af274c8f99d3dc74a9b0b8b60489d362, type: 3}
+  CharacterPrefabs2:
   - {fileID: 5498509660808742793, guid: 97949191492a8a5498b3af89092454d0, type: 3}
   - {fileID: 3334920188372708462, guid: 60f27f80e7fd6ab44ad65dd9ba529c0e, type: 3}
   - {fileID: 8545006806082724476, guid: 51053b5bbb7f9104f92a0ac11d7f12a4, type: 3}
@@ -868,8 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33b233f35c718c54f8a10a6fe9b17576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 1650700030}
-  RemainingTime: 59
+  countdownText: {fileID: 1650700030}
 --- !u!1 &1650700029
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,7 +918,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 99
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1017,8 +1026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33b233f35c718c54f8a10a6fe9b17576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 1650700030}
-  RemainingTime: 59
+  countdownText: {fileID: 1650700030}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
