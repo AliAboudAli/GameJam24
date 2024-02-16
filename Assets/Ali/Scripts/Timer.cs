@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Timer: MonoBehaviour
 {
     public TextMeshProUGUI countdownText;
-    private int timer = 9;
+    private int timer = 90;
     private bool isGameOver = false;
     public string gameOverSceneName;
 

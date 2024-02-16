@@ -1013,6 +1013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 1650700030}
+  gameOverSceneName: End
 --- !u!1 &1650700029
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,6 +1162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 1650700030}
+  gameOverSceneName: End
 --- !u!1 &1651004193
 GameObject:
   m_ObjectHideFlags: 0

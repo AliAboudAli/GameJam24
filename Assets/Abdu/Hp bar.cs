@@ -1,22 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Hpbar : MonoBehaviour
 {
-    public float health;
-    public float maxhealth;
-    public Image healthbar;
-    // Start is called before the first frame update
+    public Slider slider; // Reference to the Slider component
+
     void Start()
     {
-        maxhealth = health;
+        slider = GetComponent<Slider>(); // Get the Slider component attached to this GameObject
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetMaxHealth(int health)
     {
-        healthbar.fillAmount = Mathf.Clamp(health / maxhealth, 0, 1); 
+        slider.maxValue = health;
+        slider.value = health;
+    }
+
+    public void SetHealth(int health)
+    {
+        slider.value = health;
     }
 }
