@@ -1,40 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public Animator animator;
-    AnimatorStateInfo animStateInfo;
-
-    public int maxHealth = 1500;
-    public int currentHealth = 1500;
+    public int maxHealth = 100; // Maximum health
+    public int currentHealth; // Current health
+    public Hpbar healthBar; // Reference to the health bar UI
 
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth); // Set the maximum health for the health bar
     }
 
-    public void Update()
+    public void TakeDamage(int damage)
     {
-
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth); // Update the health bar UI
         if (currentHealth <= 0)
         {
             Die();
         }
     }
+
     void Die()
     {
-        animator.Play("Death");
-        Debug.Log("bro died");
-        if (animator.GetCurrentAnimatorStateInfo(0).length < animator.GetCurrentAnimatorStateInfo(0).normalizedTime)
-        {
-            DestructionUnchained();
-        }
-    }
-
-    void DestructionUnchained()
-    {
-        Destroy(gameObject);
+        // Show end screen or game over screen
+        // For now, let's just disable the GameObject
+        gameObject.SetActive(false);
     }
 }
