@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    
-    public int maxHealth = 100; // Maximum health
-    public int currentHealth; // Current health
+    public Animator animator;
+    AnimatorStateInfo animStateInfo;
+
+    public int maxHealth = 1500;
+    public int currentHealth = 1500;
 
     void Start()
     {
@@ -23,6 +25,11 @@ public class Character : MonoBehaviour
     }
     void Die()
     {
-        Destroy(gameObject);
+
+        if (animator.GetCurrentAnimatorStateInfo(0).length < animator.GetCurrentAnimatorStateInfo(0).normalizedTime)
+        {
+            animator.Play("Death");
+            Debug.Log("bro died");
+        }
     }
 }
