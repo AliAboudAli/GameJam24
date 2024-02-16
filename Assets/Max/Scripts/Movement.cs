@@ -16,8 +16,7 @@ public class Movement : MonoBehaviour
     public GameObject Hand;
     public GameObject Hairymanfeet365;
 
-    public GameObject P1;
-    public GameObject P2;
+
 
     public bool IsAttacking = false;
     public bool IsKicking = false;
@@ -33,19 +32,19 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+          
+
+
+
         
-            float verticalInput = Input.GetAxis("Vertical");
+        
+        
 
-            Vector3 moveDirection = new Vector3(verticalInput, 0f, 0f).normalized;
-
-            float P2verticalInput = Input.GetAxis("Vertical2");
-
-            Vector3 P2moveDirection = new Vector3(P2verticalInput, 0f, 0f).normalized;
-
-
-            if (gameObject.tag == ("P1"))
-            {
-
+        if (this.tag == ("P1"))
+        {
+                float verticalInput = Input.GetAxis("Vertical");
+                moveDirection = new Vector3(verticalInput, 0f, 0f).normalized;
+                
                 if (verticalInput == 0 && !IsAttacking)
                 {
                     animator.Play("Idle");
@@ -89,10 +88,12 @@ public class Movement : MonoBehaviour
                     animator.Play("Hurricane Kick");
                 }
             }
-
             if (gameObject.tag == ("P2"))
             {
+                float P2verticalInput = Input.GetAxis("Vertical2");
 
+                moveDirection = new Vector3(P2verticalInput, 0f, 0f).normalized;
+                
 
                 if (P2verticalInput == 0 && !IsAttacking)
                 {
@@ -111,6 +112,7 @@ public class Movement : MonoBehaviour
 
                 if (Input.GetButtonDown("P2Fire1"))
                 {
+                    Debug.Log("player2 fire1");
                     IsPunching = true;
                     IsAttacking = true;
                     animator.Play("Punch");
@@ -118,6 +120,7 @@ public class Movement : MonoBehaviour
 
                 if (Input.GetButtonDown("P2Fire2"))
                 {
+                    Debug.Log("player2 fire1");
                     IsKicking = true;
                     IsAttacking = true;
                     animator.Play("Mma Kick");
@@ -175,10 +178,10 @@ public class Movement : MonoBehaviour
                 controller.Move(moveDirection * moveSpeed * Time.deltaTime);
             }
 
-            if (!IsAttacking)
+            /*if (!IsAttacking)
             {
                 controller.Move(P2moveDirection * moveSpeed * Time.deltaTime);
-            }
+            }*/
         }
     }
 

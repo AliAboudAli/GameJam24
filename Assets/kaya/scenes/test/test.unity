@@ -372,6 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 30
   opps: {fileID: 438332417}
+  self: {fileID: 919132148051277767}
 --- !u!135 &71566239
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1268,7 +1269,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148051277767}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 315a95a310f85a546af7c68c0e8b845d, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 2cc1e396a370b4246b53ef6c0badbe97, type: 3}
   m_Controller: {fileID: 9100000, guid: 8f2f5123e7b753b44ad9b59d61095cb5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -1314,8 +1315,6 @@ MonoBehaviour:
   Foot2: {fileID: 71566236}
   Hand: {fileID: 520606020}
   Hairymanfeet365: {fileID: 422467173}
-  P1: {fileID: 919132147588561212}
-  P2: {fileID: 919132148051277767}
   IsAttacking: 0
   IsKicking: 0
   IsPunching: 0
@@ -6781,6 +6780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 20
   opps: {fileID: 438332417}
+  self: {fileID: 919132148051277767}
 --- !u!135 &422467175
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6948,8 +6948,6 @@ MonoBehaviour:
   Foot2: {fileID: 560746385}
   Hand: {fileID: 1089435587}
   Hairymanfeet365: {fileID: 1370877416}
-  P1: {fileID: 919132147588561212}
-  P2: {fileID: 919132148051277767}
   IsAttacking: 0
   IsKicking: 0
   IsPunching: 0
@@ -7088,6 +7086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 40
   opps: {fileID: 438332417}
+  self: {fileID: 919132148051277767}
 --- !u!136 &520606023
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7514,6 +7513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 30
   opps: {fileID: 235978337}
+  self: {fileID: 919132147588561212}
 --- !u!135 &560746388
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14045,6 +14045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 40
   opps: {fileID: 235978337}
+  self: {fileID: 919132147588561212}
 --- !u!136 &1089435590
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14217,7 +14218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118015878}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0069704587, y: -2.6021718e-11, z: -1.813877e-13, w: 0.99997574}
+  m_LocalRotation: {x: -0.006970455, y: 0.0000000041534087, z: 2.895185e-11, w: 0.99997574}
   m_LocalPosition: {x: -2.9900002, y: -0.39, z: -5.144005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20345,6 +20346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 20
   opps: {fileID: 235978337}
+  self: {fileID: 919132147588561212}
 --- !u!135 &1370877418
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20963,7 +20965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490514930}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0069704587, y: -2.6021718e-11, z: -1.813877e-13, w: 0.99997574}
+  m_LocalRotation: {x: -0.006970455, y: 0.0000000041534087, z: 2.895185e-11, w: 0.99997574}
   m_LocalPosition: {x: -2.9900002, y: 1.8203734, z: -15.359062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -9,6 +9,7 @@ public class Combat : MonoBehaviour
     private Animator animator; 
 
     public Character opps;
+    public GameObject self;
     void Start()
     {
 
@@ -17,10 +18,22 @@ public class Combat : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("P2"))
+        if (self.tag == ("P1"))
         {
-            opps.currentHealth -= damageAmount;
-            Debug.Log("clapped");
+            if (other.CompareTag("P2"))
+            {
+                opps.currentHealth -= damageAmount;
+                Debug.Log("clapped");
+            }
+        }
+
+        if (self.tag == ("P2"))
+        {
+            if (other.CompareTag("P1"))
+            {
+                opps.currentHealth -= damageAmount;
+                Debug.Log("clapped");
+            }
         }
 
     }
