@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Movement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 3f;
 
-    CharacterController controller;
+    public CharacterController controller;
 
     public Animator animator;
     AnimatorStateInfo animStateInfo;
@@ -15,6 +15,9 @@ public class Movement : MonoBehaviour
     public GameObject Foot2;
     public GameObject Hand;
     public GameObject Hairymanfeet365;
+
+    public GameObject P1;
+    public GameObject P2;
 
     public bool IsAttacking = false;
     public bool IsKicking = false;
@@ -30,18 +33,19 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        {
+        
             float verticalInput = Input.GetAxis("Vertical");
 
-            float P2verticalInput = Input.GetAxis("P2Vertical");
+            Vector3 moveDirection = new Vector3(verticalInput, 0f, 0f).normalized;
 
-            Vector3 moveDirection = new Vector3(0f, 0f, verticalInput).normalized;
+            float P2verticalInput = Input.GetAxis("Vertical2");
 
-            Vector3 P2moveDirection = new Vector3(0f, 0f, P2verticalInput).normalized;
+            Vector3 P2moveDirection = new Vector3(P2verticalInput, 0f, 0f).normalized;
 
 
             if (gameObject.tag == ("P1"))
             {
+
                 if (verticalInput == 0 && !IsAttacking)
                 {
                     animator.Play("Idle");
@@ -88,6 +92,8 @@ public class Movement : MonoBehaviour
 
             if (gameObject.tag == ("P2"))
             {
+
+
                 if (P2verticalInput == 0 && !IsAttacking)
                 {
                     animator.Play("Idle");
@@ -175,4 +181,4 @@ public class Movement : MonoBehaviour
             }
         }
     }
-}
+
