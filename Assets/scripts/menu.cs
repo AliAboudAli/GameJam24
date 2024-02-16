@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -43,6 +44,11 @@ public class menu : MonoBehaviour
         dropdown.value = currentresolution;
         dropdown.RefreshShownValue();
         dropdown.AddOptions(options);
+    }
+
+    public void gameover()
+    {
+
     }
 
     public void backtomenu()
